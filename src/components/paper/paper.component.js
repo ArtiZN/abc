@@ -31,17 +31,20 @@ const useStyles = makeStyles({
 export const Paper = () => {
   const classes = useStyles();
 
+  const [controller, setController] = useState(null);
+
   useEffect(() => {
     (async () => {
       const paper = await initPaper("paper", "audio", notations[0]);
+      setController(paper.synthControl);
     })();
   }, []);
 
   const handleButton = async () => {
-    const el = document.getElementsByClassName("abcjs-pushed");
-    if (el[0]) el[0].click();
+    await controller.destroy();
     const randomItem = array => array[Math.floor(Math.random() * array.length)];
     const paper = await initPaper("paper", "audio", randomItem(notations));
+    setController(paper.synthControl);
   };
 
   return (

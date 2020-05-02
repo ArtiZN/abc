@@ -27,12 +27,9 @@ export const initPaper = async (paperID, audioID, abc) => {
   
     const visualObj = abcjs.renderAbc(paperID, abc, abcOptions);
     const synth = new abcjs.synth.CreateSynth();
-    const ctx = new AudioContext();
 
     try {
-      await synth.stop();
       await synth.init({ 
-        audioContext: ctx,
         visualObj: visualObj[0],
         millisecondsPerMeasure: 400
       });
@@ -52,7 +49,7 @@ export const initPaper = async (paperID, audioID, abc) => {
     return {
       visualObj,
       synth,
-      ctx,
+      synthControl
     };
 
   } else {
