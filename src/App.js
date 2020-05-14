@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { Paper } from "./components/paper";
+import { Paper } from "./paper";
 
 function App() {
   return (

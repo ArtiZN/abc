@@ -40,12 +40,6 @@ export const initPaper = async (paperID, audioID, abc) => {
       console.warn("Audio problem:", error);
     }
 
-    // const abc_editor = new abcjs.Editor("edit-area", { 
-    //   canvas_id: "paper", 
-    //   warnings_id:"warnings",
-    //   synth: synth
-    // });
-
     return {
       visualObj,
       synth,
