@@ -21,7 +21,7 @@ export const Paper = () => {
 
   useEffect(() => {
     (async () => {
-      const paper = await initPaper("paper", "audio", notations[0]);
+      const paper = await initPaper("paper", "audio", notations[0].notation);
       setController(paper.synthControl);
     })();
   }, []);
@@ -29,7 +29,7 @@ export const Paper = () => {
   const handleRandomizeButton = async () => {
     await controller.destroy();
     const randomItem = array => array[Math.floor(Math.random() * array.length)];
-    const paper = await initPaper("paper", "audio", randomItem(notations));
+    const paper = await initPaper("paper", "audio", randomItem(notations).notation);
     setController(paper.synthControl);
   };
 
@@ -56,7 +56,7 @@ export const Paper = () => {
       <Card>
         <CardContent>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
-            ABC demo app
+            
           </Typography>
           <div className={classes.root} id="paper"></div>
           <div id="audio"></div>
