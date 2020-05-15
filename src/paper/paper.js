@@ -9,14 +9,15 @@ import "./paper.styles.js";
 
 import { useStyles } from './paper.styles';
 import { initPaper } from "./utils"
-import { notations, initialNotation } from "./data";
+import { notations } from "./data";
 import { NotationDialog } from "./dialog";
+import { List } from "./list";
 
 export const Paper = () => {
   const classes = useStyles();
 
   const [open, setOpen] = useState(false);
-  const [notation, setNotation] = useState(initialNotation);
+  const [notation, setNotation] = useState(notations[0].notation);
   const [controller, setController] = useState(null);
 
   useEffect(() => {
@@ -26,21 +27,24 @@ export const Paper = () => {
     })();
   }, []);
 
-  const handleRandomizeButton = async () => {
+  const handleControllerChange = async value => {
     await controller.destroy();
-    const randomItem = array => array[Math.floor(Math.random() * array.length)];
-    const paper = await initPaper("paper", "audio", randomItem(notations).notation);
+    const paper = await initPaper("paper", "audio", value);
     setController(paper.synthControl);
+  };
+
+  const handleListSelect = async value => {
+    await handleControllerChange(value);
+    setNotation(value);
   };
 
   const handleCreateButton = () => {
     setOpen(true);
   };
 
-  const handlePlayButton = async () => {
-    await controller.destroy();
-    const paper = await initPaper("paper", "audio", notation);
-    setController(paper.synthControl);
+  const handlePlayButton = async value => {
+    await handleControllerChange(value);
+    setNotation(value);
     setOpen(false);
   };
 
@@ -54,10 +58,12 @@ export const Paper = () => {
         onSave={handlePlayButton}
       />
       <Card>
+        <List 
+          value={notation}
+          items={notations}
+          onChange={handleListSelect}
+        />
         <CardContent>
-          <Typography className={classes.title} color="textSecondary" gutterBottom>
-            
-          </Typography>
           <div className={classes.root} id="paper"></div>
           <div id="audio"></div>
         </CardContent>
@@ -66,14 +72,6 @@ export const Paper = () => {
             justifyContent: "center"
           }}
         >
-          <Button 
-            size="small"
-            variant="outlined" 
-            color="primary"
-            onClick={() => handleRandomizeButton()}
-          >
-            Randomize notation
-          </Button>
           <Button 
             size="small"
             variant="outlined" 

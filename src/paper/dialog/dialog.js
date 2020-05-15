@@ -3,9 +3,10 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
+
+import { initialNotation } from '../data';
 
 export const NotationDialog = ({ 
   open,
@@ -16,9 +17,15 @@ export const NotationDialog = ({
 }) => {  
   const [fullWidth] = useState(true);
   const [maxWidth] = useState('sm');
+  const [inputValue, setInputValue] = useState(initialNotation);
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleInputChange = value => {
+    setNotation(value);
+    setInputValue(value);
   };
 
   return (
@@ -39,13 +46,13 @@ export const NotationDialog = ({
               width: '100%'
             }}
             multiline
-            value={notation}
-            onChange={event => setNotation(event.target.value)}
+            value={inputValue}
+            onChange={event => handleInputChange(event.target.value)}
             variant="outlined"
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={onSave} color="primary">
+          <Button onClick={() => onSave(inputValue)} color="primary">
             Save
           </Button>
           <Button onClick={handleClose} color="primary">
