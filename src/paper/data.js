@@ -1,5 +1,4 @@
 export const initialNotation = `
-
 X:2710
 T:Title 
 C:Your Name
@@ -41,17 +40,17 @@ K:Em
 `;
 
 const BeethovenSonataABC = `
-X:2710
-T:Sonata N8
+X:1
+T:Sonata №8
 C:L.V.Beethoven
 M:4/4
 L:1/16
-Q:1/4=56
+Q:1/4=50
 K:Cm
   V:1
   !fp![E,4G,4C4]- [E,3/G,3/C3/]!3![G,/C/]!4![G,3/=B,3/D3/]!5![G,/C/E/] ([=A,4C4E4]!4![=B,2D2])z2|\
   !fp!!3![=B,4D4F4]- [B,3/D3/F3/][B,/D/F/][B,3/D3/G3/][B,/D/A/] ([B,4D4A4]!3![C2E2G2])z2|
-  V:2
+  V:2 clef = bass
   [C,,4E,,4G,,4C,4]- [C,,3/E,,3/G,,3/C,3/]!2!E,/!3!D,3/!4!C,/ (!2!^F,4G,2)z _A,,|\
   _A,4-A,3/!2!A,/!1!G,3/=F,/ E,4-E,2z3/ E,/|
 `;
@@ -67,7 +66,7 @@ Q:1/4=60
 K:Em
 V:1
 B,>B|B6 c2|B6 c2|B6 c2|B6 _B2|
-V:2
+V:2 clef = bass
 z2|[EB,G,][EB,G,][EB,G,][EB,G,] [EB,G,][EB,G,][EB,G,][EB,G,]|\
 [EA,F,][EA,F,][EA,F,][EA,F,] [_EA,F,][EA,F,][EA,F,][EA,F,]|\
 [_EA,=F,][EA,F,][EA,F,][EA,F,] [DA,F,][DA,F,][D^G,F,][DG,F,]|\
@@ -75,7 +74,7 @@ z2|[EB,G,][EB,G,][EB,G,][EB,G,] [EB,G,][EB,G,][EB,G,][EB,G,]|\
 %
 V:1
 A6 B2|A6 B2|A6 B>A|A6 ^G2-|
-V:2
+V:2 
 [=CG,E,][CG,E,][CG,E,][CG,E,] [C^F,E,][CF,E,][CF,E,][CF,E,]|\
 [CF,E,][CF,E,][CF,E,][CF,E,] [CF,^D,][CF,^D,][CF,^D,][CF,^D,]|\
 [CF,=D,][CF,D,][CF,D,][CF,D,] [CF,D,][CF,D,][CF,D,][CF,D,]|\
