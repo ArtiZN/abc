@@ -26,7 +26,7 @@ C:Chopin
 M:3/4
 L:1/16
 Q:1/4=130
-K:Em
+K:Am
   B,4 |E2 F2 G4 G4 |A2 B2 c8 |F2 G2 A2 e2 d2 c2 |B2 ^A2 B8 |E2 F2 G4 G4 |A2 B2 c8 |F2 G2 A2 e2 d2 F2 |G8 B,4 |
   %W:
   % voice 1 (1 lines, 30 notes)
@@ -41,7 +41,7 @@ K:Em
 
 const BeethovenSonataABC = `
 X:1
-T:Sonata №8
+T:Sonata №8 (початок)
 C:L.V.Beethoven
 M:4/4
 L:1/16
@@ -113,7 +113,8 @@ V:2
 `
 const Mozart = `
 X:1
-T: Alphabet song
+T: Ah, vous dirai-je, Maman
+C: W. A. Mozart
 M:4/4
 L:1/4
 Q:1/4=100
@@ -150,7 +151,6 @@ X:6
 T:Waltz of the Toys
 R:waltz
 C:Michel Faubert, Canada
-Z:id:hn-waltz-6
 M:3/4
 K:D
 fe fg fe|dB AF D2|fe fg fe|dB AF D2|e2 ef ed|c3 d cB|A^G AB cA|dB AF D2|
