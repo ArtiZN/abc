@@ -178,14 +178,14 @@ d2B GAB | c2A F2G | ABA AGF | G3 :|
 `
 export const notations = [
   {
+    title: 'Prelude Op28№4',
+    notation: ChopinOp28N4
+  },  {
     title: 'Chopin Waltz A minor',
     notation: ChopinWaltzABC
   }, {
     title: 'Beethoven Sonata №8',
     notation: BeethovenSonataABC
-  }, {
-    title: 'Prelude Op28№4',
-    notation: ChopinOp28N4
   }, {
     title: 'Mozart - Ah, vous dirai-je, Maman',
     notation: Mozart
